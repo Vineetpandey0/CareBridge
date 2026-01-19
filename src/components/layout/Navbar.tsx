@@ -7,7 +7,6 @@ import { Menu, X, HeartPulse, AlertCircle, MapPin, MapPinOff, Navigation } from 
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { useGeolocation } from "@/hooks/useGeolocation";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -74,7 +73,7 @@ const Navbar = () => {
                     {/* Right Side Actions */}
                     <div className="flex items-center gap-4">
 
-                        <Link href="/emergency">
+                        <Link href="/">
                             <Button
                                 variant="destructive"
                                 className="hidden md:flex items-center gap-2 shadow-lg shadow-red-500/20 hover:shadow-red-500/40 transition-all rounded-full"
@@ -136,29 +135,6 @@ const Navbar = () => {
     );
 };
 
-// Location Status Component
-function LocationStatus({ mobile }: { mobile?: boolean }) {
-    const { location, error, getLocation } = useGeolocation();
 
-    if (location) {
-        return (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-full border border-green-200 dark:border-green-800 transition-all" title="Location Active">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-xs font-bold text-green-700 dark:text-green-400">ON</span>
-            </div>
-        )
-    }
-
-    return (
-        <button
-            onClick={getLocation}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-200 transition-colors group cursor-pointer"
-            title="Tap to Enable Location"
-        >
-            <MapPinOff className="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-500" />
-            <span className="text-xs font-bold text-slate-500 group-hover:text-blue-600">OFF</span>
-        </button>
-    )
-}
 
 export default Navbar;
