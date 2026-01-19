@@ -3,41 +3,31 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  ShieldCheck, Clock, MapPin, HeartPulse, ChevronRight,
+  ShieldCheck, Clock, HeartPulse, ChevronRight,
   Smartphone, Zap, Activity, Navigation, ArrowRight,
   TrendingUp, Download, CheckCircle2, AlertTriangle, AlertCircle,
-  Timer, Check, X, MoveRight,
-  Pill, Stethoscope, Smile, CalendarHeart, Utensils, Droplet, Users, FileText, User, GlassWater,
   MousePointer2, Brain, Search, Sparkles,
   Shield,
   Database,
   WifiOff,
   Server,
   Radio,
-  Ambulance
+  Ambulance,
+  Users,
+  FileText,
+  Check,
+  X,
+  MapPin
 } from "lucide-react";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip as RechartsTooltip } from "recharts";
-import ReactFlow, { Background, Controls, Handle, Position } from "reactflow";
-import "reactflow/dist/style.css";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Lottie from "lottie-react";
 import { GamifiedController } from "@/components/features/GamifiedController";
 
-import { InteractiveHero } from "@/components/features/InteractiveHero";
 import { AnimatedWorkflow } from "@/components/features/AnimatedWorkflow";
 
-// Placeholder for Lottie animation (would import real JSON in prod)
-// Using a simple CSS placeholder for now if JSON missing
-const PulseAnimation = () => (
-  <div className="w-full h-full flex items-center justify-center relative">
-    <div className="absolute inset-0 bg-blue-500/20 rounded-full animate-ping opacity-20"></div>
-    <div className="relative z-10 p-6 bg-white dark:bg-slate-800 rounded-full shadow-2xl border-4 border-white dark:border-slate-700">
-      <ShieldCheck className="w-16 h-16 text-blue-600" />
-    </div>
-  </div>
-);
+
 
 export default function LandingPage() {
   const fadeIn = {

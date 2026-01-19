@@ -23,7 +23,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 // ... (imports)
-import { LocationModal } from "@/components/features/LocationModal";
 
 export default function RootLayout({
   children,
