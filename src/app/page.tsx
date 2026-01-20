@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
@@ -39,6 +40,21 @@ export default function LandingPage() {
     visible: { transition: { staggerChildren: 0.1 } }
   };
 
+  const [timeLeft, setTimeLeft] = useState(60); // 60 seconds
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 60));
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (seconds: number) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 font-sans selection:bg-blue-100 selection:text-blue-900">
 
@@ -62,7 +78,7 @@ export default function LandingPage() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-5xl md:text-7xl font-display font-extrabold tracking-tight leading-[1.1] text-slate-900 dark:text-white mb-6"
             >
-              Golden Hour. <br className="hidden md:block" />
+              Golden Hour <span className="text-amber-500 text-7xl font-mono tracking-wider">{timeLeft}min</span>. <br className="hidden md:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Platinum 10.</span> Act faster.
             </motion.h1>
 

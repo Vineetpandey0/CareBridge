@@ -38,15 +38,7 @@ const Footer = () => {
                                 <FooterLink href="/#technology">Technology</FooterLink>
                             </ul>
                         </div>
-                        <div>
-                            <h3 className="font-bold text-white mb-6">Resources</h3>
-                            <ul className="space-y-4">
-                                <FooterLink href="/emergency">Emergency Mode</FooterLink>
-                                <FooterLink href="/library">First Aid Library</FooterLink>
-                                <FooterLink href="/find-care">Find Hospitals</FooterLink>
-                                <FooterLink href="#">Impact Report</FooterLink>
-                            </ul>
-                        </div>
+                        
                         <div>
                             <h3 className="font-bold text-white mb-6">Legal</h3>
                             <ul className="space-y-4">
