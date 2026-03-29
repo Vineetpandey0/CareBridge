@@ -19,7 +19,7 @@ export default function LibraryPage() {
                 <Badge variant="outline" className="mb-2 bg-primary/5 text-primary border-primary/20">Verified Health Library</Badge>
                 <h1 className="text-4xl font-bold font-display">Trusted Health Knowledge</h1>
                 <p className="text-muted-foreground text-lg">
-                    Simple, verified guides to help you understand common symptoms and stay healthy.
+                    Simple, verified guides to help you understand common symptoms and stay healthy .
                 </p>
             </div>
 
@@ -44,7 +44,7 @@ export default function LibraryPage() {
                             </div>
                             <a href={`https://medlineplus.gov/search?q=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer">
                                 <Button variant="ghost" size="sm" className="group-hover:translate-x-1 transition-transform p-0 hover:bg-transparent">
-                                    Read More <ArrowRight className="ml-1 w-4 h-4" />
+                                    Read More here <ArrowRight className="ml-1 w-4 h-4" />
                                 </Button>
                             </a>
                         </CardFooter>
